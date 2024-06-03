@@ -1,6 +1,6 @@
-class Routes < Sinatra::Base
+class DummyController < Sinatra::Base
   # health check api
-  get '/health-check' do
+  get 'dummy/health-check' do
     response.body = {
       status: 'ok',
       message: 'I am healthy'
@@ -8,7 +8,7 @@ class Routes < Sinatra::Base
   end
 
   # add new message api
-  post '/add-message' do
+  post 'dummy/add-message' do
     body = request.body.read
 
     begin
